@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +9,8 @@
 :root {
     /*cores*/
    
-    --DarkBlue: hsl(249, 10%, 26%);
-    --GrayishBlue: hsl(246, 25%, 77%);
+    --DarkBlue: hsl(249, 57%, 16%);
+    --GrayishBlue: hsl(246, 59%, 31%);
     --White: hsl(0, 0%, 100%);
 }
 
@@ -19,4 +21,33 @@ body {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(var(--DarkBlue), var(--GrayishBlue));
+    font-family: 'Bebas Neue', cursive;
+    color: var(--White);
+}
+
+.location, .temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.degree__section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.degree__section span {
+     margin: 10px;
+     font-size: 30px;
+}
+
+.degree__section h2 {
+    font-size: 40px;
 }
