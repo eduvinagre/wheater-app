@@ -12,7 +12,7 @@ window.addEventListener('load', ()=> {
 
             const api = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}2&key=de377140d689419fafdc6ec69f2ed890&include=minutely,alerts&lang=pt&units=M`
 
-            // *API to 16 day forecast const api = `https://api.weatherbit.io/v2.0/forecast/daily?city=&lat=${lat}&lon=${long}&key=de377140d689419fafdc6ec69f2ed890&lang=pt&units=M&days=16`
+            // const apiforecast = `https://api.weatherbit.io/v2.0/forecast/daily?city=&lat=${lat}&lon=${long}&key=de377140d689419fafdc6ec69f2ed890&lang=pt&units=M&days=16`
 
             fetch(api)
             .then(response => {
@@ -20,7 +20,7 @@ window.addEventListener('load', ()=> {
             })
             .then(weather => {
                 console.log(weather)
-                const [{app_temp, city_name, weather:{description}}] = weather.data
+                const [{app_temp, city_name, weather:{description}, weather:{code}}] = weather.data
                 
                 // //API's DOM
                 temperatureDegree.textContent = app_temp
@@ -36,5 +36,6 @@ window.addEventListener('load', ()=> {
     // }
 
 })
+
 
 // ????Como acessar um array dentro de um objeto dentro de um objeto
