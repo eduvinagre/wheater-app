@@ -9,18 +9,24 @@
     <title>Previsão do Tempo</title>
 </head>
 <body>
+    <div class="search">
+        <input class="search__box" type="search" placeholder="Digite a cidade">
+        <button id="search" type="submit">Pesquisar</button>
+    </div>
     <div class="location">
         <h1 class="location__timezone"></h1>
-        <p>Icon</p>
+    </div>
+    <div class= "weather__icon">
+        <img src="" alt="weather image">
     </div>
     <div class="temperature">
         <div class="degree__section">
-        <h2 class="temperature__degree"></h2>
-        <span>Cº</span>
+        <h2 class="temperature__degree"></h2><h2 class="temperature__degree__icon">ᴼ</h2>
+        <span>C</span>
     </div>
         <div class="temperature__description"></div>
     </div>
-
-    <script src="script/main.js"></script>
+    <script src="./script/main.js"></script>
+    
 </body>
 </html>
