@@ -37,7 +37,34 @@ window.addEventListener('load', ()=> {
 
         })
 
-    // } else {
+    
+    }
+})
+
+const apiKey = '28a3d5227fa2fd44181652d1533cc617'
+const searchButton = document.querySelector('#search-button');
+searchButton.addEventListener('click', searchCity);
+
+function searchCity() {
+    const city = document.querySelector('#city-input').value;
+    const apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${apiKey}`;
+
+    fetch(apiCity)
+        .then(response => {
+            return response.json();
+        })
+        .then(meteo => {
+            // Code to update the weather data with the new city's data
+
+            locationInfo.textContent = meteo.name;
+            temperatureDegree.textContent = meteo.main.temp;
+            temperatureInfo.textContent = meteo.weather[0].description;
+            iconInfo.innerHTML = `<img src="https://openweathermap.org/img/wn/${meteo.weather[0].icon}@2x.png"/>`;
+
+        });
+}
+
+// } else {
     //     if(!navigator.geolocation)
     //     const city_input = document.querySelector(".search__box")
     //     const search_btn = document.querySelector("#search");
@@ -71,6 +98,3 @@ window.addEventListener('load', ()=> {
 
     //         })
     //     }}
-    }
-})
-
