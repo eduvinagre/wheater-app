@@ -31,7 +31,7 @@ window.addEventListener('load', ()=> {
                 console.log(description, icon)
                 temperatureInfo.textContent = description
                 iconInfo.textContent = icon
-                iconInfo.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>`            
+                iconInfo.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png"/>`            
 
             })
 
