@@ -26,7 +26,7 @@ window.addEventListener('load', ()=> {
                 locationInfo.textContent = name
                 const {temp} = meteo.main
                 console.log(temp)
-                temperatureDegree.textContent = temp
+                temperatureDegree.textContent = Math.round(temp)
                 const {description, icon} = meteo.weather[0]
                 console.log(description, icon)
                 temperatureInfo.textContent = description
@@ -42,59 +42,41 @@ window.addEventListener('load', ()=> {
 })
 
 const apiKey = '28a3d5227fa2fd44181652d1533cc617'
-const searchButton = document.querySelector('#search-button');
-searchButton.addEventListener('click', searchCity);
+const searchButton = document.querySelector('#search-button')
+searchButton.addEventListener('click', searchCity)
+
+function clearInput () {
+    document.getElementById("#city-input").reset()
+}
 
 function searchCity() {
-    const city = document.querySelector('#city-input').value;
+    const city = document.querySelector('#city-input').value
+    const temperatureInfo = document.querySelector('.temperature__description')
+    const temperatureDegree = document.querySelector('.temperature__degree')
+    const locationInfo = document.querySelector('.location__timezone')
+    const iconInfo = document.querySelector('.weather__icon')
     const apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${apiKey}`;
 
     fetch(apiCity)
         .then(response => {
             return response.json();
         })
-        .then(meteo => {
-            // Code to update the weather data with the new city's data
-
-            locationInfo.textContent = meteo.name;
-            temperatureDegree.textContent = meteo.main.temp;
-            temperatureInfo.textContent = meteo.weather[0].description;
-            iconInfo.innerHTML = `<img src="https://openweathermap.org/img/wn/${meteo.weather[0].icon}@2x.png"/>`;
+        .then(meteoCity => {
+            console.log(meteoCity)
+            const {name} = meteoCity
+            locationInfo.textContent = name;
+            const {temp} = meteoCity.main
+            console.log(temp)
+            temperatureDegree.textContent = Math.round(temp);
+            const {description, icon} = meteoCity.weather[0]          
+            temperatureInfo.textContent = description;
+            iconInfo.innerHTML = `<img src="https://openweathermap.org/img/wn/${meteoCity.weather[0].icon}@2x.png"/>`;
 
         });
+    
+    cleanfield ()
+
+    function cleanfield() {
+        document.querySelector('#city-input').value = ""
+    }
 }
-
-// } else {
-    //     if(!navigator.geolocation)
-    //     const city_input = document.querySelector(".search__box")
-    //     const search_btn = document.querySelector("#search");
-    //     const apiKey = '28a3d5227fa2fd44181652d1533cc617'
-
-
-    //     search_btn.addEventListener("submit", (e) => {
-    //         e.preventDefault()
-    //         const city = city_input.value
-        
-        
-    //         const apiSearch = `https://api.openweathermap.org/data/2.5/weather?q=${city_input}&units=metric&lang=pt_br&appid=${apiKey}`
-
-    //     fetch(apiSearch)
-    //         .then(response => {
-    //             return response.json()
-    //         })
-    //         .then(meteo => {
-    //             console.log(meteo)
-    //             const {name} = meteo
-    //             console.log(name)
-    //             locationInfo.textContent = name
-    //             const {temp} = meteo.main
-    //             console.log(temp)
-    //             temperatureDegree.textContent = temp
-    //             const {description, icon} = meteo.weather[0]
-    //             console.log(description, icon)
-    //             temperatureInfo.textContent = description
-    //             iconInfo.textContent = icon
-    //             iconInfo.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png"/>`            
-
-    //         })
-    //     }}
