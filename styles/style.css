@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 * {
     margin: 0;
@@ -7,8 +8,6 @@
 }
 
 :root {
-    /*cores*/
-   
     --DarkBlue: hsl(249, 57%, 16%);
     --GrayishBlue: hsl(246, 59%, 31%);
     --White: hsl(0, 0%, 100%);
@@ -25,7 +24,20 @@ body {
     color: var(--White);
 }
 
+.title {
+    font-family: 'Comfortaa', cursive;
+    color: var(--White);
+    font-size: 2.5rem;
+    justify-content: center;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    width: 70%;
+    margin: 0.5rem;
+}
+
 .search-container {
+    height: auto;
     display: flex;
 }
 
@@ -39,10 +51,6 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-/* input:focus {
-
-} */
 
 button {
     width: 50%;
@@ -61,45 +69,89 @@ button {
     cursor: pointer
 }
 
-
-button:hover {
-    size: 110%;
-    transition: 400ms;
+button:active {
+    transform: scale(0.9);
 }
 
 .location, .temperature {
-    height: 30vh;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
+    padding: 0;
+    width: 70%;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
     align-items: center;
-    font-size: 32px;
+    font-size: 2rem;
 }
+
+.location {
+    margin-top: 1rem;
+}
+
 .temperature__description {
-
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 
-.temperature {
-    flex-direction: column;
+.temperature__degree {
+    justify-content: end;
 }
 
 .degree__section {
     display: flex;
     align-items: center;
-    cursor: pointer;
-}
-
-.temperature__degree__icon {
-    margin-left: 5px;
+    justify-content: center;
+    margin: 0.5rem;
 }
 
 .degree__section span {
-     margin: 10px;
-     font-size: 30px;
+     font-size: 2rem;
 }
 
 .degree__section h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: var(--White)
+}
+
+.temperature__description {
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.temperature__degree__feelslike {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature__degree__feelslike_value {
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 0.2rem;
+}
+
+.temperature__degree__feelslike_value span {
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.temperature__container__maxmin__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.temperature__container__max__degree, .temperature__container__min__degree__name, .temperature__container__min__degree {
+    margin-left: 0.2rem;
 }
