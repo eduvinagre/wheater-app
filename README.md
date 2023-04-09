@@ -33,7 +33,7 @@ Users should be able to:
 
 ## My process
 
-This is a project I'm did to practice HTML, CSS and Javascript skills. Specially improving my JavaScript coding skills and hability to work and fetch data from API.
+This is a project I did to practice HTML, CSS and Javascript skills. Specially improving my JavaScript coding skills and hability to work and fetch data from API.
 
 ### Built with
 
