@@ -4,8 +4,8 @@ window.addEventListener('load', ()=> {
 
     //API Keys - first for current weather and the other for the forecast
 
-    const apiKey = 
-    const apiKey2 = 
+    const apiKey = '28a3d5227fa2fd44181652d1533cc617'
+    const apiKey2 = 'de377140d689419fafdc6ec69f2ed890'
 
     const temperatureInfo = document.querySelector('.temperature__description')
     const temperatureDegree = document.querySelector('.temperature__degree')
