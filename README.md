@@ -39,7 +39,6 @@ This is a project I did to practice HTML, CSS and Javascript skills. Specially i
 
 - HTML
 - CSS custom properties
-- Flexbox
 - JavaScript
 - API's
 
